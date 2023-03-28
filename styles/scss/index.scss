@@ -1,0 +1,86 @@
+body{
+    #carousel-container{
+        background-color: white;
+        #carousel-innerContainer{
+            width: 90%;
+            #carouselDark{
+                
+                img{
+                    width: 100%;
+                    height: 500px;
+                    filter: opacity(80%) grayscale(10%);
+                }
+                .restaurant-img{
+                    filter: none;
+                }
+                .carousel-caption{
+                    color:  white;
+                    text-shadow: 1px 1px 1px black, -0.5px -0.5px 1px black;
+                    .caption-header{
+                        font-size: 200%;
+                        margin-top: -30%;
+                        font-weight: bolder;
+                    }.caption-body{
+                        font-size: 130%;
+                        margin-top: 10%;
+                        font-weight: bold;
+                    }
+                }
+                .carousel-indicators button{
+                    background-color: black;
+                }
+            }
+        }     
+    }
+
+
+
+    #deal-viewBtn-row{
+        width: 100%;
+        margin-top: 5px;
+        background-color: black;
+        color: white;
+    }
+
+
+
+
+    #order-manageSection{
+        width: 50%;
+        .card-header{
+            background-color: black;
+        }
+        .order-typeSelector{
+            background-color: black;
+            width: 50%;
+            height: 100%;
+            color: white;
+        }
+        .card-body{
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+        .card-footer{
+            background-color: black;
+        }
+
+        //DELIVERY
+        #order-location{
+            margin-left: 1%;
+            padding: 2%;
+            width: 100%;    
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 0.5px solid black;
+        }
+        #order-findLocation{
+            background-color: black;
+            color: white;
+        }
+
+        //DINE IN
+
+    }
+
+}

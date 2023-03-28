@@ -1,0 +1,61 @@
+@import './include.scss';
+
+@font-face {
+    font-family: Manslavia;
+    src: url('./../../assets/fonts/Mansalva-Regular.ttf');
+}
+
+@font-face {
+    font-family: RockSalt;
+    src: url('./../../assets/fonts/RockSalt-Regular.ttf');
+}
+
+
+header{
+    background-color: $logoBackground;
+    position: fixed;
+    z-index: 2;
+    //background-color: white;
+    box-shadow: 0px 0.5px 0.5px rgba(121, 119, 119, 0.6);
+    font-size: 100%;
+    padding-top: 0.5%;
+    padding-bottom: -5%;
+    height: 90px;
+    #logo-image{
+        margin-top: 4%;
+        width: 45%;
+        height: 50%;
+    }
+    #header-title{
+        margin-top: 1.2%;
+        margin-left: -7%;
+        font-family: RockSalt;
+        font-size: 120%;
+        font-weight: bold;
+        color: white;
+    }
+    #header-menu{
+        margin-top: 10%;
+        width: 40%;
+        height: 40%;
+        fill: white;
+        &hover{
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+footer{
+    background-color: $logoBackground;
+    color: white;
+}
+
+
+
+
+
+
+
+

@@ -12,26 +12,26 @@ let orderType_HTML = {
         <button class="btn btn-success disabled" id='order-button'>Make Order</button>
     `,
     "dine": `
-        <h5 class="card-title">Order food to be prepared!</h5>
+        <h4 class="card-title">Check food to dine in and eat!</h4>
         <p class="card-text">
             <label class='form-label'>  </label>
         </p>
-        <a href="#" class="btn btn-success"> Make Order </a>
+        <a href="#" class="btn btn-success menuPage-linker"> View Menu </a>
     `
 }
 
 
 function ordertypeManager(orderType, setDefault = false){
     if(setDefault){
-        $(`#order-type-delivery`).css({ 'background-color': 'white', 'color': 'black' });
+        $(`#order-type-delivery`).css({ 'background-color': 'white', 'color': '#a52f26' });
         $('#order-manageSection .card-body').html(orderType_HTML['delivery']);
         return;
     }
     if(orderType == 'delivery'){
-        $(`#order-type-delivery`).css({ 'background-color': 'white', 'color': 'black' });
+        $(`#order-type-delivery`).css({ 'background-color': 'white', 'color': '#a52f26' });
         $(`#order-type-dine`).css({ 'background-color': 'black', 'color': 'white' });
     }else{
-        $(`#order-type-dine`).css({ 'background-color': 'white', 'color': 'black' });
+        $(`#order-type-dine`).css({ 'background-color': 'white', 'color': '#a52f26' });
         $(`#order-type-delivery`).css({ 'background-color': 'black', 'color': 'white' });
     }
    $('#order-manageSection .card-body').html(orderType_HTML[orderType]);
@@ -79,7 +79,9 @@ function locate_userLocation(addressCoords){
 $(document).ready(function(){
     $('header').html(loadHeaderComponent('./'));
     $('footer').html(loadFooterComponent());
+    $('#sideBar').html(loadSidebarComponent())
     ordertypeManager('', true);
+    $('#sideBar').hide();
     
     $('.order-typeSelector').click(function(){
         ordertypeManager($(this).attr('id').split('-')[2]);
@@ -88,6 +90,10 @@ $(document).ready(function(){
     $('#order-manageSection').on('click', '#order-findLocation', function(){ 
         findUserCoordinates();
     });
+
+    $('*').on('click', '.menuPage-linker', function(){
+        window.location.href = './menu.html';
+    })
 
 })
 

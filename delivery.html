@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./libraries/animate/animate.min.css">
+    <link rel="stylesheet" href="./libraries/bootstrap5/css/bootstrap.css">
+    <link rel="stylesheet" href="./styles/css/delivery.css">
+    <link rel="stylesheet" href="./styles/css/components.css">
+    <!-- SCRIPTS -->
+    <script src="./libraries/jquery/jquery.js"></script>
+    <script src="./libraries/bootstrap5/js/bootstrap.bundle.js"></script>   
+    <script src="./components/header.js"></script>
+    <script src="./components/footer.js"></script>
+    <script src="./components/sideBar.js"></script>
+    <script src="./scripts/delivery.js"></script>
+</head>
+
+
+<header></header>
+<section class="container animate__animated" id="sideBar"></section>
+<br /> <br /> <br /> <br /> <br />
+
+<body>
+    <div class="container-fluid">
+        <form id="order-form">
+            <div class="row">
+
+                <div class="col-6" id="order-details-column">
+                    <h3 class="order-header">Order Receipt</h3> 
+                    <div class="receipt-container">
+                        <div class="receipt-row">
+                            <img src="" alt="No image Available" id="order-imagePath">
+                        </div>
+        
+                        <div class="receipt-row">
+                            <label for="foodName" class="form-label order-label">Name: </label> 
+                            <span id="order-name" class="order-detail"> </span>
+                        </div>
+                        <div class="receipt-row">
+                            <label for="foodAmount" class="form-label order-label">Amount: </label> 
+                            <span id="order-amount" class="order-detail"> </span>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <span> <img src="./assets/icons/svgs/minus.svg" class="order-icon" id="order-amount-minus"> </span>
+                            <span> <img src="./assets/icons/svgs/plus.svg" class="order-icon" id="order-amount-plus"> </span>
+                        </div>
+                        <div class="receipt-row">
+                            <label for="foodPrice" class="form-label order-label">Total Price: </label> 
+                            <span id="order-totalPrice" class="order-detail"> </span>
+                        </div>
+                        <div class="receipt-row">
+                            <label for="orderType" class="form-label order-label">Order Type: </label> 
+                            <select class="form-select" id="order-type">
+                                <option value="delivery" id="order-selection-delivery"> Delivery </option>
+                                <option value="dine" id="order-selection-dine"> Prepare for takeaway</option>
+                            </select>
+                        </div> <br /> <br />
+                    </div>
+                </div>
+
+
+                <div class="col-6" id="user-details-column">
+                    <h3 class="order-header">User Details</h3> 
+                    <div class="receipt-container">
+                        <div class="receipt-row">
+                            <label for="foodName" class="form-label order-label">Enter your Name </label> 
+                            <input id="order-name" class="form-control user-detail-input" />
+                        </div>
+
+                        <div class="receipt-row">
+                            <label for="foodName" class="form-label order-label">Contact Email </label> 
+                            <input id="order-name" class="form-control user-detail-input" placeholder="example: vivekRestaurant@gmail.com"/>
+                        </div>
+
+                        <div class="receipt-row" id="delivery-location">
+                            <label for="foodName" class="form-label order-label">Delivery Location </label> 
+                            <input id="order-location" class="form-control user-detail-input"/> <br />
+                            <button class="btn btn-success" id="user-address-fetch-button"> Get Address </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+           
+
+            
+            
+        </form>
+    </div>
+</body>
+
+<br /> <br />  <br /> <br />
+<footer></footer>
+
+</html>

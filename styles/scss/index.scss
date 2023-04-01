@@ -1,33 +1,31 @@
+@import './include.scss';
+
 body{
     #carousel-container{
-        background-color: white;
         #carousel-innerContainer{
             width: 90%;
             #carouselDark{
-                
                 img{
                     width: 100%;
                     height: 500px;
-                    filter: opacity(80%) grayscale(10%);
-                }
-                .restaurant-img{
-                    filter: none;
+                    //filter: opacity(80%) grayscale(10%);
+                    z-index: 1;
                 }
                 .carousel-caption{
-                    color:  white;
-                    text-shadow: 1px 1px 1px black, -0.5px -0.5px 1px black;
+                    color:  black;
+                    text-shadow: 1px 1px 1px white, -1px -1px 1px white;
                     .caption-header{
                         font-size: 200%;
-                        margin-top: -30%;
+                        margin-top: -10%;
                         font-weight: bolder;
                     }.caption-body{
                         font-size: 130%;
-                        margin-top: 10%;
+                        margin-top: 5%;
                         font-weight: bold;
                     }
                 }
                 .carousel-indicators button{
-                    background-color: black;
+                    background-color: white;
                 }
             }
         }     
@@ -38,7 +36,7 @@ body{
     #deal-viewBtn-row{
         width: 100%;
         margin-top: 5px;
-        background-color: black;
+        background-color: $logoBackground;
         color: white;
     }
 
@@ -48,10 +46,10 @@ body{
     #order-manageSection{
         width: 50%;
         .card-header{
-            background-color: black;
+            background-color: $logoBackground;
         }
         .order-typeSelector{
-            background-color: black;
+            background-color: $logoBackground;
             width: 50%;
             height: 100%;
             color: white;
@@ -61,7 +59,7 @@ body{
             border-right: 1px solid black;
         }
         .card-footer{
-            background-color: black;
+            background-color: $logoBackground;
         }
 
         //DELIVERY

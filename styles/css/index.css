@@ -1,7 +1,3 @@
-body #carousel-container {
-  background-color: white;
-}
-
 body #carousel-container #carousel-innerContainer {
   width: 90%;
 }
@@ -9,40 +5,34 @@ body #carousel-container #carousel-innerContainer {
 body #carousel-container #carousel-innerContainer #carouselDark img {
   width: 100%;
   height: 500px;
-  -webkit-filter: opacity(80%) grayscale(10%);
-          filter: opacity(80%) grayscale(10%);
-}
-
-body #carousel-container #carousel-innerContainer #carouselDark .restaurant-img {
-  -webkit-filter: none;
-          filter: none;
+  z-index: 1;
 }
 
 body #carousel-container #carousel-innerContainer #carouselDark .carousel-caption {
-  color: white;
-  text-shadow: 1px 1px 1px black, -0.5px -0.5px 1px black;
+  color: black;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
 }
 
 body #carousel-container #carousel-innerContainer #carouselDark .carousel-caption .caption-header {
   font-size: 200%;
-  margin-top: -30%;
+  margin-top: -10%;
   font-weight: bolder;
 }
 
 body #carousel-container #carousel-innerContainer #carouselDark .carousel-caption .caption-body {
   font-size: 130%;
-  margin-top: 10%;
+  margin-top: 5%;
   font-weight: bold;
 }
 
 body #carousel-container #carousel-innerContainer #carouselDark .carousel-indicators button {
-  background-color: black;
+  background-color: white;
 }
 
 body #deal-viewBtn-row {
   width: 100%;
   margin-top: 5px;
-  background-color: black;
+  background-color: #a52f26;
   color: white;
 }
 
@@ -51,11 +41,11 @@ body #order-manageSection {
 }
 
 body #order-manageSection .card-header {
-  background-color: black;
+  background-color: #a52f26;
 }
 
 body #order-manageSection .order-typeSelector {
-  background-color: black;
+  background-color: #a52f26;
   width: 50%;
   height: 100%;
   color: white;
@@ -67,7 +57,7 @@ body #order-manageSection .card-body {
 }
 
 body #order-manageSection .card-footer {
-  background-color: black;
+  background-color: #a52f26;
 }
 
 body #order-manageSection #order-location {

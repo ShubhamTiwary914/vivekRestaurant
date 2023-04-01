@@ -1,0 +1,48 @@
+
+body{
+    #order-form{
+        margin-left: 10%;
+        .order-header{
+            margin-bottom: 5%;
+            padding-bottom: 2%;
+            border-bottom: 3px solid rgb(114, 135, 128);
+            width: 60%;
+        }
+        .receipt-container{
+            border-radius: 10px;
+            width: 50%;
+            padding: 2%;
+            #order-imagePath{
+                width: 85%;
+                height: 80%;
+            }
+            .receipt-row{
+                margin-bottom: 5%;
+                background-color: rgba(231, 238, 236, 0.3);
+                padding: 5%;
+                width: 140%;
+            }
+            .order-detail{
+                font-size: 130%;
+                margin-left: 20%;
+            }   
+            .order-icon{
+                width: 5%;
+                height: 5%;
+                margin-left: 5%;
+                &:hover{
+                    cursor: pointer;
+                    width: 5.5%; 
+                    height: 5.5%;
+                }
+            }
+
+            .order-label{
+                font-size: 130%;
+            }
+            .order-input{
+                width: 50%;
+            }
+        }
+    }
+}

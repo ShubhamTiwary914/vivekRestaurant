@@ -14,13 +14,16 @@
     <script src="./libraries/bootstrap5/js/bootstrap.bundle.js"></script>   
     <script src="./components/header.js"></script>
     <script src="./components/footer.js"></script>
+    <script src="./components/sideBar.js"></script>
     <script src="./scripts/index.js"></script>
 </head>
 
-<header></header>
 
+<header></header>
+<section class="container animate__animated" id="sideBar"></section>
 <body>
   <br /> <br /> <br /> <br />
+  </div>
   <div class="container-fluid" id="carousel-container">
     <div class="container-fluid" id="carousel-innerContainer">
       <div class="row  animate__animated animate__backInRight">
@@ -31,6 +34,7 @@
               <button type="button" data-bs-target="#carouselDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
+              <div class="carousel-filter"></div>
               <div class="carousel-item active" data-bs-interval="2000">
                 <img src="./assets/menu/combo/daalMakni_butterNaan.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -56,7 +60,7 @@
           </div>
       </div>
       <div class="row animate__animated animate__backInLeft">
-        <button class="btn"  id="deal-viewBtn-row"> View All Deals </button>
+        <button class="btn menuPage-linker"  id="deal-viewBtn-row"> View All Deals </button>
       </div>
     </div>
   </div>

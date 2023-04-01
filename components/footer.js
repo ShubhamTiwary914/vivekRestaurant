@@ -1,6 +1,6 @@
 function loadFooterComponent(){
     return `
     <div class='container-fluid'>
-        Test
+        this is the footer
     </div>`;
 }

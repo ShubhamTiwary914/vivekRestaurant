@@ -1,18 +1,15 @@
 @import './include.scss';
 
 @font-face {
-    font-family: Manslavia;
-    src: url('./../../assets/fonts/Mansalva-Regular.ttf');
-}
-
-@font-face {
     font-family: RockSalt;
     src: url('./../../assets/fonts/RockSalt-Regular.ttf');
 }
 
 
+
+
 header{
-    background-color: $logoBackground;
+    background-color: white;
     position: fixed;
     z-index: 2;
     //background-color: white;
@@ -20,7 +17,7 @@ header{
     font-size: 100%;
     padding-top: 0.5%;
     padding-bottom: -5%;
-    height: 90px;
+    height: 70px;
     #logo-image{
         margin-top: 4%;
         width: 45%;
@@ -32,23 +29,42 @@ header{
         font-family: RockSalt;
         font-size: 120%;
         font-weight: bold;
-        color: white;
+        color: black;
+    }
+    #logo-image, #header-title{
+        &:hover{
+            cursor: pointer;
+        }
     }
     #header-menu{
         margin-top: 10%;
         width: 40%;
         height: 40%;
         fill: white;
-        &hover{
+        &:hover{
             cursor: pointer;
         }
     }
 }
 
 
+#sideBar{
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    margin-top: 5%;
+    margin-left: 80%;
+    z-index: 2;
+    *{
+        opacity: 1;
+    }
+}
+
+
 
 footer{
-    background-color: $logoBackground;
+    background-color: black;
     color: white;
 }
 

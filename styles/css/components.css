@@ -1,3 +1,10 @@
+.outlined-red-btn {
+  background-color: white;
+  color: #a52f26;
+  border-radius: 2px;
+  border: 1px solid #a52f26;
+}
+
 @font-face {
   font-family: RockSalt;
   src: url("./../../assets/fonts/RockSalt-Regular.ttf");
@@ -18,7 +25,7 @@ header {
 header #logo-image {
   margin-top: 4%;
   width: 45%;
-  height: 50%;
+  height: 45%;
 }
 
 header #header-title {

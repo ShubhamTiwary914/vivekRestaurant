@@ -1,77 +1,34 @@
-body #carousel-container #carousel-innerContainer {
-  width: 90%;
-}
-
-body #carousel-container #carousel-innerContainer #carouselDark img {
-  width: 100%;
-  height: 500px;
-  z-index: 1;
-}
-
-body #carousel-container #carousel-innerContainer #carouselDark .carousel-caption {
-  color: black;
-  text-shadow: 1px 1px 1px white, -1px -1px 1px white;
-}
-
-body #carousel-container #carousel-innerContainer #carouselDark .carousel-caption .caption-header {
-  font-size: 200%;
-  margin-top: -10%;
-  font-weight: bolder;
-}
-
-body #carousel-container #carousel-innerContainer #carouselDark .carousel-caption .caption-body {
-  font-size: 130%;
-  margin-top: 5%;
-  font-weight: bold;
-}
-
-body #carousel-container #carousel-innerContainer #carouselDark .carousel-indicators button {
+.outlined-red-btn, body #left-body .menu-btn {
   background-color: white;
+  color: #a52f26;
+  border-radius: 2px;
+  border: 1px solid #a52f26;
 }
 
-body #deal-viewBtn-row {
-  width: 100%;
-  margin-top: 5px;
+body #left-body #locate-btn {
+  margin-top: 1%;
+}
+
+body #left-body #locate-btn #locator-icon {
+  width: 40%;
+  height: 40%;
+}
+
+body #left-body #locate-btn #locate-text {
+  margin-left: -10%;
+}
+
+body #left-body #locate-btn:hover {
+  cursor: pointer;
+  color: gray;
+}
+
+body #left-body #find-food-btn {
+  width: 120%;
+}
+
+.bg-maroon {
   background-color: #a52f26;
-  color: white;
-}
-
-body #order-manageSection {
-  width: 50%;
-}
-
-body #order-manageSection .card-header {
-  background-color: #a52f26;
-}
-
-body #order-manageSection .order-typeSelector {
-  background-color: #a52f26;
-  width: 50%;
-  height: 100%;
-  color: white;
-}
-
-body #order-manageSection .card-body {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-}
-
-body #order-manageSection .card-footer {
-  background-color: #a52f26;
-}
-
-body #order-manageSection #order-location {
-  margin-left: 1%;
-  padding: 2%;
-  width: 100%;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 0.5px solid black;
-}
-
-body #order-manageSection #order-findLocation {
-  background-color: black;
   color: white;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,1 +1,7 @@
-/* No CSS *//*# sourceMappingURL=include.css.map */
+.outlined-red-btn {
+  background-color: white;
+  color: #a52f26;
+  border-radius: 2px;
+  border: 1px solid #a52f26;
+}
+/*# sourceMappingURL=include.css.map */

@@ -1,84 +1,43 @@
 @import './include.scss';
 
+
+
 body{
-    #carousel-container{
-        #carousel-innerContainer{
-            width: 90%;
-            #carouselDark{
-                img{
-                    width: 100%;
-                    height: 500px;
-                    //filter: opacity(80%) grayscale(10%);
-                    z-index: 1;
-                }
-                .carousel-caption{
-                    color:  black;
-                    text-shadow: 1px 1px 1px white, -1px -1px 1px white;
-                    .caption-header{
-                        font-size: 200%;
-                        margin-top: -10%;
-                        font-weight: bolder;
-                    }.caption-body{
-                        font-size: 130%;
-                        margin-top: 5%;
-                        font-weight: bold;
-                    }
-                }
-                .carousel-indicators button{
-                    background-color: white;
-                }
+
+    #left-body{
+
+        #locate-btn{   
+            margin-top: 1%;
+            #locator-icon{
+                width: 40%;
+                height: 40%;
             }
-        }     
-    }
-
-
-
-    #deal-viewBtn-row{
-        width: 100%;
-        margin-top: 5px;
-        background-color: $logoBackground;
-        color: white;
-    }
-
-
-
-
-    #order-manageSection{
-        width: 50%;
-        .card-header{
-            background-color: $logoBackground;
+            #locate-text{
+                margin-left: -10%;
+            }
+            &:hover{
+                cursor: pointer;
+                color: gray;
+            }
         }
-        .order-typeSelector{
-            background-color: $logoBackground;
-            width: 50%;
-            height: 100%;
-            color: white;
+        
+        #find-food-btn{
+            width: 120%; 
         }
-        .card-body{
-            border-left: 1px solid black;
-            border-right: 1px solid black;
+        .menu-btn{
+            @extend .outlined-red-btn;
         }
-        .card-footer{
-            background-color: $logoBackground;
-        }
-
-        //DELIVERY
-        #order-location{
-            margin-left: 1%;
-            padding: 2%;
-            width: 100%;    
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-bottom: 0.5px solid black;
-        }
-        #order-findLocation{
-            background-color: black;
-            color: white;
-        }
-
-        //DINE IN
 
     }
 
+    #right-body{
+
+    }
 }
+
+
+.bg-maroon{
+    background-color: $logoBackground;
+    color: white;
+}
+

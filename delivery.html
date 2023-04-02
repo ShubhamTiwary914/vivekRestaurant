@@ -39,9 +39,43 @@
 
             <div class="col-4" id="orderDetails-container">
                 <div class="row">
-                    <div id="orderDetails-header"> Order Summary</div>
+                    <div id="orderDetails-header"> Order Summary</div> 
+
+                    <div class="row orderDetails-item"> 
+                        <div class="col-4 orderDetails-itemTitle"> Order Mode:  </div>    
+                        <div class="col-1"> </div>    
+                        <div class="col-6"> 
+                            <select class="form-select" id="orderMode-selector">
+                                <option value="delivery"> Deliver to Me </option>
+                                <option value="dine"> Prepare for Takeaway </option>
+                            </select>
+                        </div>    
+                    </div>
+
+                    <div class="row orderDetails-item"> 
+                        <div class="col-4 orderDetails-itemTitle"> Payment Mode:  </div>    
+                        <div class="col-1"> </div>    
+                        <div class="col-6"> 
+                            <select class="form-select" id="payMode-selector">
+                                <option value="online"> Scan and Pay </option>
+                                <option value="offline"> Cash In Hand </option>
+                            </select>
+                        </div>    
+                    </div>
+
+                    <div class="row orderDetails-item"> 
+                        <div class="col-6 orderDetails-itemTitle"> Total Amount:  </div>    
+                        <div class="col-1"> </div>    
+                        <div class="col-3" id="orderDetails-totalPrice"> </div>    
+                    </div>
+
+                    <div class="row" id="orderBtn-container">
+                        <button class="btn btn-dark"> Proceed To Order Page </button>
+                    </div>
+
                 </div>
             </div>
+
         </div>
 
     </div>

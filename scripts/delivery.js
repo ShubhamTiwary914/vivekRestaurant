@@ -117,35 +117,54 @@ function addItemAmount(btnID, sessionObj, operationType){
     let selected_itemName = btnID.split('-')[0]
     let selected_quantity = btnID.split('-')[1]
 
-    let deleteIndices = [];
 
     for(let index=0; index < cartDetails.length; index++)
         if( (cartDetails[index]['name'] == selected_itemName) && (cartDetails[index]['quantity'] == selected_quantity) ){
+            let itemPriceList = cartDetails[index]['priceList']
+            let itemQuanity = cartDetails[index]['quantity'];
+            let itemPrice = sessionObj.fetchQuantityPrice(itemPriceList, itemQuanity);
+
             if(operationType == 'substract'){
                 cartDetails[index]['amount']--;
+                userDetails['totalPrice'] -= itemPrice;
                 if(cartDetails[index]['amount'] <= 0)
                     cartDetails[index]['deleted'] = true;
             }
             else{
                 cartDetails[index]['amount']++;
+                userDetails['totalPrice'] += itemPrice;
             }
-
-            let itemPriceList = cartDetails[index]['priceList']
-            let itemQuanity = cartDetails[index]['quantity'];
-            console.log(sessionObj.fetchQuantityPrice(itemPriceList, itemQuanity))
-            //console.log(sessionObj.fetchQuantityPrice(cartDetails[index]['priceList'], sessionObj.fetchQuantityPrice(cartDetails[index]['quantity'])) )
         }
 
-    userDetails = sessionObj.load_userDetails(); 
     sessionObj.update_allDetails(userDetails, cartDetails)
     organisedCart = sessionObj.load_organizedCart(cartDetails);
     load_shoppingCart();
-    updateOrderDetails();
+    updateOrderDetails(sessionObj);
 }
 
 
-function updateOrderDetails(){
-    console.log(userDetails)
+function updateOrderDetails(sessionObj){
+    if(userDetails['totalPrice'] == undefined){
+        userDetails = sessionObj.load_userDetails();
+        userDetails['totalPrice'] = 0;
+    }
+    if(userDetails['totalPrice'] <= 0)
+        $('#orderBtn-container > button').attr('disabled', true)
+    else
+        $('#orderBtn-container > button').attr('disabled', false)
+
+    $('#orderDetails-totalPrice').text(`₹ ${userDetails['totalPrice']}`)
+}
+
+
+
+function redirectTo_orderPage(sessionObj){
+    let payMode = $('#payMode-selector').val();
+    let orderMode = $('#orderMode-selector').val();
+    userDetails['payMode'] = payMode;
+    userDetails['orderMode'] = orderMode;
+    sessionObj.update_userDetails(userDetails)
+    window.location.href = './order.html';
 }
 
 
@@ -156,7 +175,7 @@ $(document).ready(function(){
     cartDetails = session.load_cartDetails();
     organisedCart = session.load_organizedCart(cartDetails);
     load_shoppingCart();
-    updateOrderDetails();
+    updateOrderDetails(session);
 
 
     $('header').html(loadHeaderComponent('./'));
@@ -170,6 +189,10 @@ $(document).ready(function(){
     })
     $('#cart-items-container').on('click', '.plus-btn', function(){
         addItemAmount($(this).attr('id'), session, 'add')
+    })
+
+    $('#orderBtn-container > button').click(function(){
+        redirectTo_orderPage(session);
     })
   
 })

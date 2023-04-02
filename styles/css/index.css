@@ -21,6 +21,31 @@
   color: black;
 }
 
+@font-face {
+  font-family: test;
+  src: url("./../../assets/fonts/external/actionj.ttf");
+}
+
+@font-face {
+  font-family: Manslavia;
+  src: url("./../../assets/fonts/Mansalva-Regular.ttf");
+}
+
+@font-face {
+  font-family: RockSalt;
+  src: url("./../../assets/fonts/RockSalt-Regular.ttf");
+}
+
+@font-face {
+  font-family: goodTimes;
+  src: url("./../../assets/fonts/external/good times rg.ttf");
+}
+
+@font-face {
+  font-family: rand;
+  src: url("./../../assets/fonts/external/kanit-medium.otf");
+}
+
 body #home-top-container #left-body {
   margin-top: 5%;
   padding: 5% 1% 0px 5%;

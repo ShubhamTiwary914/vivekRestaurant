@@ -95,7 +95,6 @@ class Session{
                 {
                     itemExists = true;
                     cartDetails[cartIndex]['amount']++;
-                    console.log(cartDetails[cartIndex])
                     cartDetails[cartIndex]['deleted'] = false;
                     totalAmount += this.fetchQuantityPrice(cartDetails[cartIndex]['priceList'], cartDetails[cartIndex]['quantity']) 
                 }

@@ -1,9 +1,18 @@
 @import './include.scss';
 
+
+
 @font-face {
-    font-family: rand;
+    font-family: goodTimes;
     src: url('./../../assets/fonts/external/good\ times\ rg.ttf');
 }
+
+
+@font-face {
+    font-family: kanitMedium;
+    src: url('./../../assets/fonts/external/kanit-medium.otf');
+}
+
 
 
 
@@ -12,8 +21,9 @@
     font-weight: bold;
     letter-spacing: 1px;    
     word-spacing: 70%;
-    font-family: rand;
+    font-family: goodTimes;
 }
+
 
 body{
     
@@ -33,7 +43,7 @@ body{
         #cart-items-container{
             background-color: rgba(221, 209, 209, 0.1);
             padding: 0% ;
-            width: 100%;
+            width: 90%;
 
             .cart-item{
                 padding: 3%; 
@@ -95,6 +105,34 @@ body{
         border-bottom: 2px solid black;
         padding-bottom: 5%;
        }
+       .orderDetails-item{
+            margin-top: 15%;
+            .orderDetails-itemTitle{
+                font-family: kanitMedium;
+                font-size: 150%;
+            }
+            #orderDetails-totalPrice{
+                font-size: 150%;
+            }
+            #payMode-selector, #orderMode-selector{
+                width: 120%;
+                font-size: 120%;
+                height: 100%;
+                padding: 5%;
+            }
+       }
+
+       #orderBtn-container{
+            margin-top: 10%;
+            button{
+                &:hover{
+                    background-color: white;
+                    color: black;
+                    border: 1px solid black;
+                }
+            }
+       }
+
    }
 
 

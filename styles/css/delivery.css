@@ -22,8 +22,18 @@
 }
 
 @font-face {
-  font-family: rand;
+  font-family: Manslavia;
+  src: url("./../../assets/fonts/Mansalva-Regular.ttf");
+}
+
+@font-face {
+  font-family: goodTimes;
   src: url("./../../assets/fonts/external/good times rg.ttf");
+}
+
+@font-face {
+  font-family: kanitMedium;
+  src: url("./../../assets/fonts/external/kanit-medium.otf");
 }
 
 #headerText-design, body #shoppingCart-container #cart-header, body #orderDetails-container #orderDetails-header {
@@ -31,7 +41,7 @@
   font-weight: bold;
   letter-spacing: 1px;
   word-spacing: 70%;
-  font-family: rand;
+  font-family: goodTimes;
 }
 
 body #shoppingCart-container {
@@ -49,7 +59,7 @@ body #shoppingCart-container #cart-itemCount {
 body #shoppingCart-container #cart-items-container {
   background-color: rgba(221, 209, 209, 0.1);
   padding: 0%;
-  width: 100%;
+  width: 90%;
 }
 
 body #shoppingCart-container #cart-items-container .cart-item {
@@ -114,5 +124,35 @@ body #shoppingCart-container #cart-items-container .cart-item .quantity-row .qua
 body #orderDetails-container #orderDetails-header {
   border-bottom: 2px solid black;
   padding-bottom: 5%;
+}
+
+body #orderDetails-container .orderDetails-item {
+  margin-top: 15%;
+}
+
+body #orderDetails-container .orderDetails-item .orderDetails-itemTitle {
+  font-family: kanitMedium;
+  font-size: 150%;
+}
+
+body #orderDetails-container .orderDetails-item #orderDetails-totalPrice {
+  font-size: 150%;
+}
+
+body #orderDetails-container .orderDetails-item #payMode-selector, body #orderDetails-container .orderDetails-item #orderMode-selector {
+  width: 120%;
+  font-size: 120%;
+  height: 100%;
+  padding: 5%;
+}
+
+body #orderDetails-container #orderBtn-container {
+  margin-top: 10%;
+}
+
+body #orderDetails-container #orderBtn-container button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
 /*# sourceMappingURL=delivery.css.map */

@@ -3,18 +3,82 @@ let selectedCategory = 'veg';
 let currentMenuItems = []; 
 let currentMenuHasCategory = true;
 
+let userDetails = {}
+let cartDetails = []
+
+
+
+
+
+function quantitySelector_HTML(itemPrice){
+    let quantitySelector = ''; 
+    let slashCount = countSubString(itemPrice, '/')
+    let itemPrices = parseIntegersFromString(itemPrice, "/")
+    if(slashCount == 1){
+        quantitySelector = `
+            <select class='form-select quantity-select'>
+                <option value='select-half' selected>Half @ ${itemPrices[0]}</option>
+                <option value='select-full'>Full @ ${itemPrices[1]} </option>
+            </select>
+        `;
+    }else if(slashCount == 2){
+        quantitySelector += `
+            <select class='form-select quantity-select'>
+                <option value='select-qtr' selected>Qtr @ ${itemPrices[0]} </option>
+                <option value='select-half'>Half @ ${itemPrices[1]}</option>
+                <option value='select-full'>Full @ ${itemPrices[2]} </option>
+            </select>
+        `;
+    }
+    return quantitySelector;
+}
+
+
+function quantitySelectorManager(sessionObj, quantityID, defaultCase = false){
+    if(defaultCase){ //set lowest quantity by default
+        for(let itemIndex = 0; itemIndex < currentMenuItems.length; itemIndex++){
+            currentMenuItems[itemIndex]['priceList'] = parseIntegersFromString(currentMenuItems[itemIndex]['price'],'/')
+            let pricesCategory = currentMenuItems[itemIndex]['priceList'].length;
+            if(pricesCategory == 1) currentMenuItems[itemIndex]['quantity'] = 'default'
+            else if(pricesCategory == 2) currentMenuItems[itemIndex]['quantity'] = 'half'
+            else if(pricesCategory == 3) currentMenuItems[itemIndex]['quantity'] = 'qtr'   
+        }
+    }else{
+        let selectedVal = $(`#${quantityID} > .quantity-select`).val().split('-')[1]
+        let itemIndex = parseInt(quantityID.split('-')[1])
+        currentMenuItems[itemIndex]['quantity'] = selectedVal;
+    }
+}
+
+
+
+function addImageSource_toItem(itemName, imageSource, sessionObj){
+    cartDetails = sessionObj.load_cartDetails();
+    let userDetails = sessionObj.load_userDetails();
+    for(let index=0; index< cartDetails.length; index++){
+        //console.log(cartDetails[index]['name'])
+        if(cartDetails[index]['name'] == itemName)
+            cartDetails[index]['imagePath'] = imageSource
+    }
+    sessionObj.update_allDetails(userDetails, cartDetails)
+}
+
+
+
 
 
 //change body of menuItems after filtering from updateSelectedmenu
-function update_menuBody(){
+function update_menuBody(sessionObj){
     let menu_itemsList_HTML = ``;
     for(let index=0; index < currentMenuItems.length; index++){
         let item_imagePath = parse_menuImageSource(currentMenuItems[index])
         let itemName = `${currentMenuItems[index]['name']} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(x${currentMenuItems[index]['amount']})`;
         if(currentMenuItems[index]['amount'] <= 1)
             itemName = `${currentMenuItems[index]['name']}`;
-        let itemPrices = parse_menuItemPrices(currentMenuItems[index]['price'])
 
+        let itemPrices = parse_menuItemPrices(currentMenuItems[index]['price'])
+        let menuItem_quantitySelect = quantitySelector_HTML(currentMenuItems[index]['price'])
+        
         menu_itemsList_HTML += `
             <div class='col-5 menu-item-card g-5'>
                 <div class="card">
@@ -26,11 +90,11 @@ function update_menuBody(){
                         </p> <br /> 
                         <div class='row'>
                             <div class='col-4'>
-                                <button class="btn order-btn" id="delivery-${index}">Make Order</button>
+                                <button class="btn cart-btn" id="cart-${index}">Add To Cart</button>
                             </div>
-                            <div class='col-2'></div>
-                            <div class='col-5'>
-                                <button class="btn order-btn" id="dine-${index}">Prepare for Takeaway</button>
+                            <div class='col-1'></div>
+                            <div class='col-5' id='quantity-${index}'>
+                                ${menuItem_quantitySelect}
                             </div>
                         </div>
                     </div>
@@ -44,7 +108,7 @@ function update_menuBody(){
 
 
 //filter menuItemsArray content depending on what has been selected
-function updateSelectedMenu(){
+function updateSelectedMenu(sessionObj){
     currentMenuHasCategory = menuList[selectedMenu]['hasCategory']
     if(menuList[selectedMenu]['hasCategory']){  
         $('#category-container').html(menuCategorySelectorHTML)
@@ -56,7 +120,7 @@ function updateSelectedMenu(){
         $('#category-container').html(`<br /> <br /> <br /> ${categoryParsed} has no Categories to choose from!`)
         currentMenuItems = menuList[selectedMenu]['items']['itemList']
     }
-    update_menuBody();
+    update_menuBody(sessionObj);
 }
 
 
@@ -72,7 +136,10 @@ function controlMenuCategory(clickedCategory){
     $(`#category-${selectedCategory}`).removeClass('selected-category')
     $(`#category-${clickedCategory}`).addClass('selected-category')
     selectedCategory = clickedCategory;
+    //console.log(currentMenuItems)
 }
+
+
 
 
 //parses image source from itemName : example: Chicken Soup => chicken_soup and returns a path to that image source
@@ -91,50 +158,72 @@ function parse_menuItemPrices(itemPrice){
         case 1:
             return `<h4> Price:  <span class='float-end item-price'>${itemPrice} </span> </h4>`;
         case 2:
-            return `<h4> Price (Half / Full): <span class='float-end item-price'> ${itemPrice} </span> </h4>`;
+            return `<h4> Price: <span class='float-end item-price'> ${itemPrice} </span> </h4>`;
         case 3:
-            return `<h4> Price (Qtr / Half / Full): <span class='float-end item-price'> ${itemPrice} </span> </h4>`;
+            return `<h4> Price: <span class='float-end item-price'> ${itemPrice} </span> </h4>`;
       }
 }
 
 
 
-function loadOrder_deliveryOption(orderID){
+
+function addItemToCart(sessionObj, orderID){
     let orderIndex = parseInt(orderID.split('-')[1]);
-    let selectedItem = currentMenuItems[orderIndex]
-    selectedItem['imagePath']= parse_menuImageSource(currentMenuItems[orderIndex])
-    selectedItem['category'] = `${selectedMenu}-${selectedCategory}`;
-    selectedItem['type'] = orderID.split('-')[0]
-    sessionStorage.setItem('orderDetails', JSON.stringify(selectedItem));
-    window.location.href ='./delivery.html';
+    sessionObj.update_cartDetails(currentMenuItems[orderIndex]);
+
+    for(let itemIndex = 0; itemIndex < currentMenuItems.length; itemIndex++){ //update items image path
+        let currentItem_name = currentMenuItems[itemIndex]['name'];
+        let item_imagePath = parse_menuImageSource(currentMenuItems[itemIndex])
+        addImageSource_toItem(currentItem_name, item_imagePath, sessionObj)
+    }
+
+    cartDetails = sessionObj.load_cartDetails();
+    userDetails = sessionObj.load_userDetails();
 }
 
 
 
 
 $(document).ready(function(){
+    let session = new Session();
+    userDetails = session.load_userDetails();
+    cartDetails = session.load_cartDetails();
+
     $('header').html(loadHeaderComponent('./'));
     $('footer').html(loadFooterComponent());
     $('#sideBar').html(loadSidebarComponent());
     $('#sideBar').hide();
     controlMenuSelection('starters');
     controlMenuCategory('veg');
-    updateSelectedMenu();
+    updateSelectedMenu(session);
+    quantitySelectorManager(session, '', true)
+    
+
 
     $('.menu-header-box').click(function(){
         let clickedMenu = $(this).attr('id').split('-')[0]
         controlMenuSelection(clickedMenu);
-        updateSelectedMenu()
+        updateSelectedMenu(session)
+        quantitySelectorManager(session, '', true)
     })
 
 
     $('#category-container').on('click', '.category-item',function(){
         let clickedCategory = $(this).attr('id').split('-')[1]
         controlMenuCategory(clickedCategory);
-        updateSelectedMenu()
+        updateSelectedMenu(session)
+        quantitySelectorManager(session, '', true);
     })
 
-    $('#menu-itemsList').on('click', '.order-btn', function(){
-        loadOrder_deliveryOption($(this).attr('id'));
+    $('#menu-itemsList').on('click', '.cart-btn', function(){
+        addItemToCart(session, $(this).attr('id'));
+    })
+
+    $('#menu-itemsList').on('change', '.quantity-select', function(){
+        quantitySelectorManager(session, $(this).parent().attr('id'))
+    })
+
+    $('#goto-cart-btn').click(function(){
+        window.location.href = './delivery.html'
     })
 })

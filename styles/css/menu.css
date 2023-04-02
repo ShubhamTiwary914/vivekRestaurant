@@ -1,3 +1,26 @@
+.outlined-red-btn {
+  background-color: white;
+  color: #a52f26;
+  border-radius: 2px;
+  border: 1px solid #a52f26;
+}
+
+.outlined-red-btn:hover {
+  background-color: #a52f26;
+  color: white;
+}
+
+.outlined-black-btn {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.outlined-black-btn:hover {
+  background-color: white;
+  color: black;
+}
+
 @font-face {
   font-family: Manslavia;
   src: url("./../../assets/fonts/Mansalva-Regular.ttf");
@@ -79,12 +102,18 @@ body #menu-itemsList .menu-item-card {
   background-color: rgba(135, 131, 131, 0.4);
 }
 
-body #menu-itemsList .order-btn {
+body #menu-itemsList .cart-btn {
   background-color: black;
   color: white;
 }
 
 body #menu-itemsList .item-price {
   font-size: 120%;
+}
+
+body #goto-cart-btn {
+  position: fixed;
+  z-index: 1;
+  margin: 10% 0% 0% 90%;
 }
 /*# sourceMappingURL=menu.css.map */

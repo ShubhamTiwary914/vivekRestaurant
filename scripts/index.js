@@ -1,22 +1,26 @@
+let userCart = [];
+let userDetails = {};
 
 
-function findUserCoordinates(){
+function findUserCoordinates(sessionObj){
     const success = (position) =>{
         let longt = position.coords.longitude;
         let latt = position.coords.latitude;
-
         let addressValue = `${longt} ${latt}`;
-        sessionStorage.setItem('location', addressValue);
-        locate_userLocation(addressValue);
+
+        userDetails['location'] = addressValue;
+        sessionObj.update_userDetails(userDetails)
+
+        locate_userLocation(addressValue, sessionObj);
     }
     const error = () =>{
-        alert('Make sure you have a proper internet connection and add location for better accuracy!')
+        alert('Make sure you have a proper internet connection to detect location!')
     }
     navigator.geolocation.getCurrentPosition(success, error);
 }
 
 
-function locate_userLocation(addressCoords){
+function locate_userLocation(addressCoords, sessionObj){
     let apiKey = 'd0e6bda9f31d47cda3da00d1a3c703da';
     let userLongitude = addressCoords.split(' ')[0];
     let userLatitude = addressCoords.split(' ')[1];
@@ -30,8 +34,11 @@ function locate_userLocation(addressCoords){
         let addressName = fetchedResult[resultsCount - 1]['name']
         let district = fetchedResult[resultsCount - 1]['state_district']
         let state = fetchedResult[resultsCount - 1]['state']
-        let userLocationDetails = `${addressName}, ${streetName}, ${district}, ${state}`;
-        console.log(userLocationDetails)
+        let userLocationDetails = `${streetName}, ${district}, ${state}`;
+
+        userDetails['address'] = userLocationDetails;
+        sessionObj.update_userDetails(userDetails)
+        $('#delivery-input').val(userDetails['address'])
     })
 }
 
@@ -62,14 +69,19 @@ function handleSelectionOptions(selectedOption){
 }
 
 
-
 $(document).ready(function(){
+    let session = new Session();
+    userDetails = session.load_userDetails();
+    cartDetails = session.load_cartDetails();
+
+    //session.print_sessionDetails();
+    
     $('header').html(loadHeaderComponent('./'));
     $('footer').html(loadFooterComponent());
     $('#sideBar').html(loadSidebarComponent())
     $('#sideBar').hide();
     handleSelectionOptions('delivery')
-
+    
 
     $('#selection-manager').change(function(){
         handleSelectionOptions($(this).val());
@@ -80,7 +92,7 @@ $(document).ready(function(){
     });
 
     $('#locate-btn').click(function(){
-       findUserCoordinates();
+       findUserCoordinates(session);
     })
 })
 

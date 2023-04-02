@@ -1,54 +1,118 @@
-body #order-form {
-  margin-left: 10%;
+.outlined-red-btn {
+  background-color: white;
+  color: #a52f26;
+  border-radius: 2px;
+  border: 1px solid #a52f26;
 }
 
-body #order-form .order-header {
-  margin-bottom: 5%;
-  padding-bottom: 2%;
-  border-bottom: 3px solid #728780;
-  width: 60%;
+.outlined-red-btn:hover {
+  background-color: #a52f26;
+  color: white;
 }
 
-body #order-form .receipt-container {
-  border-radius: 10px;
-  width: 50%;
-  padding: 2%;
+.outlined-black-btn {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 }
 
-body #order-form .receipt-container #order-imagePath {
-  width: 85%;
-  height: 80%;
+.outlined-black-btn:hover {
+  background-color: white;
+  color: black;
 }
 
-body #order-form .receipt-container .receipt-row {
-  margin-bottom: 5%;
-  background-color: rgba(231, 238, 236, 0.3);
-  padding: 5%;
-  width: 140%;
+@font-face {
+  font-family: rand;
+  src: url("./../../assets/fonts/external/good times rg.ttf");
 }
 
-body #order-form .receipt-container .order-detail {
-  font-size: 130%;
-  margin-left: 20%;
+#headerText-design, body #shoppingCart-container #cart-header, body #orderDetails-container #orderDetails-header {
+  font-size: 150%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  word-spacing: 70%;
+  font-family: rand;
 }
 
-body #order-form .receipt-container .order-icon {
-  width: 5%;
-  height: 5%;
+body #shoppingCart-container {
   margin-left: 5%;
 }
 
-body #order-form .receipt-container .order-icon:hover {
-  cursor: pointer;
-  width: 5.5%;
-  height: 5.5%;
+body #shoppingCart-container #cart-itemCount {
+  margin-top: 5%;
+  font-size: 125%;
+  border-bottom: 2px solid black;
+  width: 70%;
+  font-weight: bold;
 }
 
-body #order-form .receipt-container .order-label {
+body #shoppingCart-container #cart-items-container {
+  background-color: rgba(221, 209, 209, 0.1);
+  padding: 0%;
+  width: 100%;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item {
+  padding: 3%;
+  height: 220px;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .cart-item-name {
+  font-size: 150%;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .cart-item-amount {
+  font-size: 140%;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .cart-item-price {
+  font-size: 120%;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .cart-item-image {
+  width: 100%;
+  border: 2px solid black;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .amount-controller-btn {
+  width: 17%;
+  height: 40px;
   font-size: 130%;
 }
 
-body #order-form .receipt-container .order-input {
-  width: 50%;
+body #shoppingCart-container #cart-items-container .cart-item .amount-controller-btn:hover {
+  cursor: pointer;
+  width: 20%;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .quantity-row .quantity-col {
+  border-right: 0.5px solid black;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .quantity-row .quantity-col .quantity-header {
+  font-weight: bold;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .quantity-row .quantity-col .quantity-price {
+  color: green;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .quantity-row .quantity-col .quantity-controller-row {
+  margin-top: 10%;
+  margin-left: -20px;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .quantity-row .quantity-col .quantity-controller-row .quantity-amount-controller {
+  width: 45%;
+}
+
+body #shoppingCart-container #cart-items-container .cart-item .quantity-row .quantity-col .quantity-controller-row .quantity-amount-controller:hover {
+  cursor: pointer;
+  width: 47%;
+}
+
+body #orderDetails-container #orderDetails-header {
+  border-bottom: 2px solid black;
+  padding-bottom: 5%;
 }
 /*# sourceMappingURL=delivery.css.map */

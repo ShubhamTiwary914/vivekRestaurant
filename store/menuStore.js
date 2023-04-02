@@ -5,8 +5,8 @@ const menuList = {
         "hasCategory": true,
         "items": {
             "veg": [
-                { "name": "Soya Chaap Tikka" , "amount": 6, price: "200", "ext": "png", },
-                { "name": "Paneer Tikka" , "amount": 6, price: "220" , "ext": "png", },
+                { "name": "Soya Chaap Tikka" , "amount": 1, price: "200", "ext": "png", },
+                { "name": "Paneer Tikka" , "amount": 1, price: "220" , "ext": "png", },
                 { "name": "Finger Chips" , "amount": 1, price: "100", "ext": "png", },
                 { "name": "Paneer Pakora" , "amount": 1, price: "160", "ext": "png", },
                 { "name": "Mix Pakora" , "amount": 1, price: "150", "ext": "png", },
@@ -152,10 +152,10 @@ const menuList = {
             "nonVeg": [
                 { "name": "Mutton Biryani" , "amount": 1, price: "180/280", "ext": "png", },
                 { "name": "Egg. Pulao" , "amount": 1, price: "130", "ext": "png", },
-                { "name": "Chicken Pulao" , "amount": 2, price: "180", "ext": "png", },
-                { "name": "Mutton Pulao" , "amount": 2, price: "180", "ext": "png", },
+                { "name": "Chicken Pulao" , "amount": 1, price: "180", "ext": "png", },
+                { "name": "Mutton Pulao" , "amount": 1, price: "180", "ext": "png", },
                 { "name": "Egg. Biryani with Raita" , "amount": 1, price: "130", "ext": "png", },
-                { "name": "Chicken Biryani with Raita" , "amount": 2, price: "170", "ext": "png", }
+                { "name": "Chicken Biryani with Raita" , "amount": 1, price: "170", "ext": "png", }
             ]
         }
     },
@@ -174,7 +174,7 @@ const menuList = {
                 { "name": "Curd" , "amount": 1, price: "60", "ext": "png", },
                 { "name": "Pineapple Raita" , "amount": 1, price: "120" , "ext": "png", },
                 { "name": "Green Salad" , "amount": 1, price: "80", "ext": "png", },
-                { "name": "Tomato Salad" , "amount": 4, price: "50", "ext": "png", },
+                { "name": "Tomato Salad" , "amount": 1, price: "50", "ext": "png", },
                 { "name": "Onion Salad" , "amount": 1, price: "50", "ext": "png", },
                 { "name": "Chicken Salad" , "amount": 1, price: "50", "ext": "png", },
                 { "name": "Kachumber Salad (Plain)" , "amount": 1, price: "60" , "ext": "png", },
@@ -213,6 +213,7 @@ const menuList = {
         }
     }
 }
+
 
 
 const menuCategorySelectorHTML = `

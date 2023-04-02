@@ -4,4 +4,20 @@
   border-radius: 2px;
   border: 1px solid #a52f26;
 }
+
+.outlined-red-btn:hover {
+  background-color: #a52f26;
+  color: white;
+}
+
+.outlined-black-btn {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.outlined-black-btn:hover {
+  background-color: white;
+  color: black;
+}
 /*# sourceMappingURL=include.css.map */

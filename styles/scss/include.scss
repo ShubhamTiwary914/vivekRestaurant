@@ -7,6 +7,22 @@ $logoBackground: #a52f26;
     color: $logoBackground;
     border-radius: 2px;
     border: 1px solid $logoBackground;
+    &:hover{
+        background-color: #a52f26;
+        color: white;
+    }
+}
+
+
+.outlined-black-btn{
+    //@extend .outlined-red-btn;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    &:hover{
+        background-color: white;
+        color: black;
+    }
 }
 
 

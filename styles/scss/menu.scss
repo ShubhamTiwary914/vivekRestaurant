@@ -84,13 +84,20 @@ body{
             margin-top: 5%;
             background-color: rgba(135, 131, 131, 0.4)
         }
-        .order-btn{
+        .cart-btn{
             background-color: black;
             color: white;
         }
         .item-price{
             font-size: 120%;
         }
+    }
+
+
+    #goto-cart-btn{
+        position: fixed;
+        z-index: 1;
+        margin: 10% 0% 0% 90%;
     }
 
 }

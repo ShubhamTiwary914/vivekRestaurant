@@ -17,17 +17,29 @@ $logoBackground: #a52f26;
 
 .outlined-black-btn{
     //@extend .outlined-red-btn;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
     &:hover{
-        background-color: white;
-        color: black;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
     }
 }
 
 
 
+.pointed-cursor{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.hover-text-grey{
+    &:hover{
+        color: gray;
+    }
+}
 
 
 

@@ -11,13 +11,22 @@
 }
 
 .outlined-black-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.outlined-black-btn:hover {
   background-color: black;
   color: white;
   border: 1px solid white;
 }
 
-.outlined-black-btn:hover {
-  background-color: white;
-  color: black;
+.pointed-cursor:hover {
+  cursor: pointer;
+}
+
+.hover-text-grey:hover {
+  color: gray;
 }
 /*# sourceMappingURL=include.css.map */

@@ -21,6 +21,14 @@
   color: black;
 }
 
+.pointed-cursor:hover, body #order-container #location-details #location-findCoords:hover, body #order-container #location-details #location-pin:hover {
+  cursor: pointer;
+}
+
+.hover-text-grey:hover, body #order-container #location-details #location-findCoords:hover {
+  color: gray;
+}
+
 @font-face {
   font-family: fortAnteena_medium;
   src: url("./../../assets/fonts/external/ford-antenna-medium-cnd-587bd97171cbd.otf");
@@ -60,5 +68,39 @@ body #order-container #order-header {
   font-family: fortAnteena_medium;
   letter-spacing: 2px;
   word-spacing: 5px;
+}
+
+body #order-container #order-totalAmount {
+  text-align: center;
+  font-family: fortAnteena_medium;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+}
+
+body #order-container .order-input {
+  width: 70%;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+
+body #order-container #location-details {
+  margin: 5% 0px 0px 0px;
+}
+
+body #order-container #location-details #location-findCoords {
+  margin: 4% 0px 0px -10%;
+}
+
+body #order-container #location-details #location-pin {
+  width: 20%;
+  margin: 35% 0px 0px -20%;
+}
+
+body #order-container #submit-row {
+  margin-left: 10%;
+}
+
+body #order-container #submit-row #scanner-image {
+  width: 60%;
 }
 /*# sourceMappingURL=order.css.map */

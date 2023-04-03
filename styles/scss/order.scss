@@ -34,6 +34,44 @@ body{
             letter-spacing: 2px;
             word-spacing: 5px;
         }
+
+        #order-totalAmount{
+            text-align: center;
+            font-family: fortAnteena_medium;
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+        .order-input{
+            width: 70%;
+            margin-top: 5%;
+            margin-left: 10%;
+        }
+
+        #location-details{
+            margin: 5% 0px 0px 0px;
+            #location-findCoords{
+                margin: 4% 0px 0px -10%; 
+                @extend .pointed-cursor;
+                @extend .hover-text-grey;   
+            }
+            #location-pin{
+                width: 20%;
+                margin: 35% 0px 0px -20%;
+                @extend .pointed-cursor;
+            }
+        }
+
+        #submit-row{
+            margin-left: 10%;
+            #scanner-image{
+                width: 60%;
+            }
+        }
+
     }
 
 }
+
+
+
+

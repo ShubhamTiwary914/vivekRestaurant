@@ -179,6 +179,7 @@ function addItemToCart(sessionObj, orderID){
 
     cartDetails = sessionObj.load_cartDetails();
     userDetails = sessionObj.load_userDetails();
+    header_changeCartCount(sessionObj)
 }
 
 
@@ -191,8 +192,7 @@ $(document).ready(function(){
 
     $('header').html(loadHeaderComponent('./'));
     $('footer').html(loadFooterComponent());
-    $('#sideBar').html(loadSidebarComponent());
-    $('#sideBar').hide();
+    header_changeCartCount(session)
     controlMenuSelection('starters');
     controlMenuCategory('veg');
     updateSelectedMenu(session);

@@ -140,6 +140,7 @@ function addItemAmount(btnID, sessionObj, operationType){
     organisedCart = sessionObj.load_organizedCart(cartDetails);
     load_shoppingCart();
     updateOrderDetails(sessionObj);
+    header_changeCartCount(sessionObj)
 }
 
 
@@ -180,8 +181,7 @@ $(document).ready(function(){
 
     $('header').html(loadHeaderComponent('./'));
     $('footer').html(loadFooterComponent());
-    $('#sideBar').html(loadSidebarComponent());
-    $('#sideBar').hide();
+    header_changeCartCount(session)
 
 
     $('#cart-items-container').on('click', '.minus-btn', function(){

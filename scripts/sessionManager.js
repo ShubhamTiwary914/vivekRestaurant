@@ -11,6 +11,16 @@ class Session{
     }
 
 
+
+
+
+
+
+
+
+
+
+    //-------------------- LOADING --------------------------
     fetchQuantityPrice(priceList, quantity){
         if(quantity == 'qtr') 
             return priceList[0];
@@ -29,9 +39,6 @@ class Session{
         if(quantity == 'default')
             return priceList[0];
     }
-
-
-
 
 
     load_userDetails(){
@@ -71,6 +78,32 @@ class Session{
     }
 
 
+    load_totalCartCount(){
+        let totalCartCount = 0;
+        let cartDetails = this.load_cartDetails();
+        cartDetails.forEach(cartItem => {
+            totalCartCount += cartItem['amount']
+        });
+        return totalCartCount;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //-------------------- UPDATING --------------------------
     update_userDetails(userDetails){
         sessionStorage.setItem('userDetails', JSON.stringify(userDetails));
     }
@@ -118,6 +151,23 @@ class Session{
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //-------------------- PRINTING --------------------------
     print_allDetails(){
         console.log(JSON.parse(sessionStorage.getItem('userDetails')));
         console.log(JSON.parse(sessionStorage.getItem('cartDetails')));

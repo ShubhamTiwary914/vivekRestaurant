@@ -1,5 +1,6 @@
 let userCart = [];
 let userDetails = {};
+let currentSliderIndex = 0;
 
 
 function findUserCoordinates(sessionObj){
@@ -11,11 +12,14 @@ function findUserCoordinates(sessionObj){
         userDetails['location'] = addressValue;
         sessionObj.update_userDetails(userDetails)
 
+        stop_overlaySpinner('body')
         locate_userLocation(addressValue, sessionObj);
     }
     const error = () =>{
         alert('Make sure you have a proper internet connection to detect location!')
+        stop_overlaySpinner('body')
     }
+    
     navigator.geolocation.getCurrentPosition(success, error);
 }
 
@@ -30,10 +34,9 @@ function locate_userLocation(addressCoords, sessionObj){
         let fetchedResult = result['results']
         let resultsCount = fetchedResult.length
         //address details
-        let streetName = fetchedResult[resultsCount - 1]['street']
-        let addressName = fetchedResult[resultsCount - 1]['name']
-        let district = fetchedResult[resultsCount - 1]['state_district']
-        let state = fetchedResult[resultsCount - 1]['state']
+        let streetName = (fetchedResult[resultsCount - 1]['street'] == undefined) ? " " : fetchedResult[resultsCount - 1]['street'] 
+        let district = (fetchedResult[resultsCount - 1]['state_district'] == undefined) ? "Dehradun" : fetchedResult[resultsCount - 1]['state_district']
+        let state = (fetchedResult[resultsCount - 1]['state'] == undefined) ? "Uttarakhand" : fetchedResult[resultsCount - 1]['state']
         let userLocationDetails = `${streetName}, ${district}, ${state}`;
 
         userDetails['address'] = userLocationDetails;
@@ -69,18 +72,45 @@ function handleSelectionOptions(selectedOption){
 }
 
 
+function fadingSliderAnimator(){
+    let sliderImages = [ 'chicken_tikka.jpg', 'chicken_pakora.jpg', 'cold_drink.webp', 'paneer_pakora.jpg', 'paneer_tikka.webp', 'tandoori_chicken.jpg'] 
+    while(true){
+        let newSliderIndex = randomNumberGenerator(0, sliderImages.length - 1);
+        if(newSliderIndex != currentSliderIndex){
+            currentSliderIndex = newSliderIndex;
+            break;
+        }
+    }
+    $('#slider-img').addClass('animate__animated animate__fadeOut');
+    setTimeout(()=>{
+        $('#slider-img').removeClass('animate__animated animate__fadeOut');
+        $('#slider-img').attr('src', `./assets/slider/${sliderImages[currentSliderIndex]}`)
+        $('#slider-img').addClass('animate__animated animate__fadeIn');
+    }, 700)
+    
+    setTimeout(fadingSliderAnimator, randomNumberGenerator(7000, 10000))
+}
+
+
+
+
+
+
 $(document).ready(function(){
     let session = new Session();
     userDetails = session.load_userDetails();
     cartDetails = session.load_cartDetails();
-
-    //session.print_sessionDetails();
     
     $('header').html(loadHeaderComponent('./'));
     $('footer').html(loadFooterComponent());
-    $('#sideBar').html(loadSidebarComponent())
-    $('#sideBar').hide();
+    header_changeCartCount(session);
     handleSelectionOptions('delivery')
+
+    load_overlaySpinner('body', randomNumberGenerator(200, 600), {
+        image: './assets/icons/logo.png'
+    })
+
+    setTimeout(fadingSliderAnimator, randomNumberGenerator(5000, 7000))
     
 
     $('#selection-manager').change(function(){
@@ -92,7 +122,9 @@ $(document).ready(function(){
     });
 
     $('#locate-btn').click(function(){
-       findUserCoordinates(session);
+        load_overlaySpinner('body', false, { text: "Fetching Location Details" })
+        findUserCoordinates(session);
     })
+
 })
 

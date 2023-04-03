@@ -11,14 +11,15 @@
 }
 
 .outlined-black-btn {
-  background-color: black;
-  color: white;
-  border: 1px solid white;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
 
 .outlined-black-btn:hover {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 }
 
 .pointed-cursor:hover, body #order-container #location-details #location-findCoords:hover, body #order-container #location-details #location-pin:hover {

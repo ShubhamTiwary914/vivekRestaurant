@@ -64,8 +64,7 @@ $(document).ready(function(){
 
     $('header').html(loadHeaderComponent('./'));
     $('footer').html(loadFooterComponent());
-    $('#sideBar').html(loadSidebarComponent());
-    $('#sideBar').hide();
+    header_changeCartCount(session)
     loadOrder_Modes()
 
 

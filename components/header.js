@@ -18,54 +18,33 @@ function loadHeaderComponent(rootPath){
             <div class='col-3 animate__animated animate__bounceInDown' id='header-title'>
                 Vivek's Restaurant
             </div>
-            <div class='col-5'></div>
-            <div class='col-1 animate__animated animate__bounceInDown'>
-               <img src='./${rootPath}/${menuIcons["hamburger"]}' id='header-menu'>
-            </div>
+            <div class='col-2'></div>
+            <div class='col-1 navigation-link' id='index'> <img src='./assets/icons/home/home.svg' class='navigation-link-image'><br /> Home </div>
+            <div class='col-1 navigation-link' id='menu'> <img src='./assets/icons/home/menu.svg' class='navigation-link-image'><br /> Menu </div>
+            <div class='col-1 navigation-link' id='delivery'> 
+                <img src='./assets/icons/home/cart-trolley-ui-5-svgrepo-com.png' class='navigation-link-image'> 
+                <span id='cart-items-count-indicator'> 0 </span> <br /> My Cart </div>
+            <div class='col-1 navigation-link' id='about'> <img src='./assets/icons/home/profile.svg' class='navigation-link-image'><br /> About Us </div>
         </div>
     </div>`;
 }
 
 
-
-
-
-function loadHeaderMenu(){
-    const menuBar_animation = (menubarOpen, endAnimation = false)=>{
-        if(endAnimation){
-            $('#header-menu').removeClass('animate__animated animate__rotateOut')
-            $('#header-menu').addClass('animate__animated animate__rotateIn')
-            if(menubarOpen){
-                $('#header-menu').attr('src', `./${pathTo_rootDirectory}/${menuIcons["xmark"]}`)
-                $('#sideBar').show()
-                $('#sideBar').addClass('animate__fadeInRight')
-                $('#sideBar').removeClass('animate__fadeOutRight')
-            }else{
-                $('#header-menu').attr('src', `./${pathTo_rootDirectory}/${menuIcons["hamburger"]}`)
-                $('#sideBar').removeClass('animate__fadeInRight')
-                $('#sideBar').addClass('animate__fadeOutRight')
-                setTimeout(()=>{$('#sideBar').hide()}, 500)
-            }
-            return;
-        }
-        $('#header-menu').removeClass('animate__animated animate__rotateIn')
-        $('#header-menu').addClass('animate__animated animate__rotateOut')
-        setTimeout(()=>{
-            menuBar_animation(menubarOpen, true)
-        }, 100)
-    }
-
-    menubarOpen = !menubarOpen;
-    menuBar_animation(menubarOpen);
+function header_changeCartCount(sessionObj){
+    let cartCount = sessionObj.load_totalCartCount();
+    $('#cart-items-count-indicator').text(cartCount);
 }
 
 
+
 $(document).ready(function(){
-    $('header').on('click', '#header-menu', function(){
-        loadHeaderMenu();
-    })
 
     $('header').on('click', '#header-title, #logo-image', function(){
         window.location.href = './index.html';
+    })
+
+    $('header').on('click', '.navigation-link', function(){ 
+        let pageName = $(this).attr('id');
+        window.location.href = `./${pageName}.html`;
     })
 })

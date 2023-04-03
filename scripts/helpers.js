@@ -36,8 +36,6 @@ function randomNumberGenerator(lowestNumber, highestNumber){
 
 
 
-
-
 function load_overlaySpinner(element = 'body', duration = 1000, arguments = {}){
     $(element).LoadingOverlay("show", arguments);
     if((duration != false)){

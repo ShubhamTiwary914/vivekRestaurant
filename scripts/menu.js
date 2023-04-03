@@ -72,7 +72,7 @@ function update_menuBody(sessionObj){
     let menu_itemsList_HTML = ``;
     for(let index=0; index < currentMenuItems.length; index++){
         let item_imagePath = parse_menuImageSource(currentMenuItems[index])
-        let itemName = `${currentMenuItems[index]['name']} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(x${currentMenuItems[index]['amount']})`;
+        let itemName = `${currentMenuItems[index]['name']} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (x${currentMenuItems[index]['amount']})`;
         if(currentMenuItems[index]['amount'] <= 1)
             itemName = `${currentMenuItems[index]['name']}`;
 
@@ -82,15 +82,17 @@ function update_menuBody(sessionObj){
         menu_itemsList_HTML += `
             <div class='col-5 menu-item-card g-5'>
                 <div class="card">
-                    <img src="${item_imagePath}" class="card-img-top" alt="Image Not Available...">
+                    <img src="${item_imagePath}" class="card-img-top menuItem-image" alt="Image Not Available...">
                     <div class="card-body">
-                        <h3 class="card-title"> ${itemName} </h3> <br /> <hr /> <br />
+                        <h3 class="card-title"> ${itemName} </h3> 
                         <p class="card-text">
                             ${itemPrices}
                         </p> <br /> 
                         <div class='row'>
                             <div class='col-4'>
-                                <button class="btn cart-btn" id="cart-${index}">Add To Cart</button>
+                                <button class="btn cart-btn" id="cart-${index}">
+                                    Add To Cart
+                                </button>
                             </div>
                             <div class='col-1'></div>
                             <div class='col-5' id='quantity-${index}'>
@@ -179,7 +181,25 @@ function addItemToCart(sessionObj, orderID){
 
     cartDetails = sessionObj.load_cartDetails();
     userDetails = sessionObj.load_userDetails();
+    alertItemAddedToCart()
     header_changeCartCount(sessionObj)
+}
+
+
+
+function alertItemAddedToCart(end = false){
+    if(end){
+        $('#item-added-alerter').removeClass('animate__animated animate__slideInDown')
+        $('#item-added-alerter').hide();
+    }
+    else{
+        $('#item-added-alerter').show();
+        $('#item-added-alerter').text('Your Item has been Successfully added to your cart!');
+        $('#item-added-alerter').addClass('animate__animated animate__slideInDown')
+        setTimeout(()=>{
+            alertItemAddedToCart(true)
+        }, 500)
+    }
 }
 
 
@@ -192,11 +212,16 @@ $(document).ready(function(){
 
     $('header').html(loadHeaderComponent('./'));
     $('footer').html(loadFooterComponent());
+    $('#item-added-alerter').hide()
     header_changeCartCount(session)
     controlMenuSelection('starters');
     controlMenuCategory('veg');
     updateSelectedMenu(session);
     quantitySelectorManager(session, '', true)
+
+    load_overlaySpinner('body', randomNumberGenerator(200, 600), {
+        image: './assets/icons/logo.png'
+    })
     
 
 
@@ -215,6 +240,8 @@ $(document).ready(function(){
         quantitySelectorManager(session, '', true);
     })
 
+
+
     $('#menu-itemsList').on('click', '.cart-btn', function(){
         addItemToCart(session, $(this).attr('id'));
     })
@@ -222,6 +249,9 @@ $(document).ready(function(){
     $('#menu-itemsList').on('change', '.quantity-select', function(){
         quantitySelectorManager(session, $(this).parent().attr('id'))
     })
+
+
+
 
     $('#goto-cart-btn').click(function(){
         window.location.href = './delivery.html'

@@ -93,6 +93,13 @@ function fadingSliderAnimator(){
 
 
 
+function redirect_aboutSection(aboutUs_section, sessionObj){
+    userDetails = sessionObj.load_userDetails();
+    userDetails['redirect_aboutSection'] = aboutUs_section;
+    sessionObj.update_userDetails(userDetails);
+    window.location.href = './about.html';
+}
+
 
 
 
@@ -124,6 +131,12 @@ $(document).ready(function(){
     $('#locate-btn').click(function(){
         load_overlaySpinner('body', false, { text: "Fetching Location Details" })
         findUserCoordinates(session);
+    })
+
+
+    $('.custom-card-btn').click(function(){
+        let aboutUs_section = $(this).attr('id')
+        redirect_aboutSection(aboutUs_section, session);
     })
 
 })

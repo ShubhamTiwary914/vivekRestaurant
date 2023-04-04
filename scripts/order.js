@@ -67,6 +67,10 @@ $(document).ready(function(){
     header_changeCartCount(session)
     loadOrder_Modes()
 
+    load_overlaySpinner('body', randomNumberGenerator(200, 600), {
+        image: './assets/icons/logo.png'
+    })
+
 
     $('#cancel-btn').click(function(){
         window.location.href = './delivery.html';

@@ -9,6 +9,10 @@
     margin-left: 10%;
 }
 
+@font-face {
+    font-family: goodTimes;
+    src: url('./../../assets/fonts/external/good\ times\ rg.ttf');
+}
 
 
 body{
@@ -19,9 +23,13 @@ body{
                 width: 80%;
                 border: 1px solid black;
                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                //filter: brightness(75%) contrast(140%); 
             }
             .aboutUs-text{
                 margin-top: 5%;
+                font-size: 120%;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: gray;    
             }
         }
 

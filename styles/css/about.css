@@ -38,6 +38,11 @@
   margin-left: 10%;
 }
 
+@font-face {
+  font-family: goodTimes;
+  src: url("./../../assets/fonts/external/good times rg.ttf");
+}
+
 body #aboutUs-container .aboutUs-row {
   height: 500px;
 }
@@ -51,6 +56,9 @@ body #aboutUs-container .aboutUs-row .aboutUs-image {
 
 body #aboutUs-container .aboutUs-row .aboutUs-text {
   margin-top: 5%;
+  font-size: 120%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: gray;
 }
 
 body #aboutUs-container .left-col-box {

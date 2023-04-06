@@ -183,6 +183,10 @@ $(document).ready(function(){
     $('footer').html(loadFooterComponent());
     header_changeCartCount(session)
 
+    load_overlaySpinner('body', randomNumberGenerator(200, 600), {
+        image: './assets/icons/logo.png'
+    });
+
 
     $('#cart-items-container').on('click', '.minus-btn', function(){
         addItemAmount($(this).attr('id'), session, 'substract')

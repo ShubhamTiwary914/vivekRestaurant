@@ -60,6 +60,15 @@ header{
    
 }
 
+.outlined-red-btn-inverted{
+    @extend .outlined-red-btn;
+    background-color: $logoBackground;
+    color: white;
+    &:hover{
+        background-color: black;
+    }
+}
+
 
 footer{
     background-color: black;
@@ -73,14 +82,14 @@ footer{
         }
         .footer-sectionHeader{
             letter-spacing: 1.5px;
-            font-size: 120%;
+            font-size: 110%;
         }
         .footer-link{
             margin-top: 5%;
-            &:hover{
-                font-size: 105%;
-                cursor: pointer;
-            }
+        }
+
+        #footer-credits{
+            color: rgba(106, 104, 104, 0.6);
         }
     }
 }

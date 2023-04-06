@@ -4,31 +4,32 @@ function loadFooterComponent(){
         <div class='row'>
             <div class='col-5' id='footer-headText'> <h4><b> Vivek's Restaurant </b></h4 > </div>
             <div class='col-5'></div>
-            <div class='col-2'> <button class='btn btn-outline-light'> More About Us </div>
         </div>
         <br /> <br />
         <div class='row'>
-            <div class='col-4'> 
-                <b class='footer-sectionHeader'> Go To </b> <br/> <br /> <br />
-                <span class='footer-link'> Order Food </span> <br /> <br />
-                <span class='footer-link'> Login / Signup  </span> <br /> <br />
-                <span class='footer-link'> Check My Cart </span> <br /> <br /  >
-                <span class='footer-link'> Search Food  </span>
+            <div class='col-5'> 
+                <b class='footer-sectionHeader'> For Reservations </b> <br/> <br />
+                <div class='footer-link text-danger'> Contact us at  </div>
+                <div class='footer-link'> Contact No.<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +(91)1352763651 <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +(91)9720557588  </div>
+                <div class='footer-link'> Email &nbsp;&nbsp;&nbsp; vivekrestaurant@gmail.com </div> <br />
+                <div class='footer-link'> 
+                    <a href='./about.html'>   <button class='btn outlined-red-btn-inverted'> More About Us </button>   </a>
+                </div>
             </div>
             <div class='col-4'> 
-                <b class='footer-sectionHeader'> About Us </b> <br/> <br /> <br />
-                <span class='footer-link'> Who We Are </span> <br /> <br />
-                <span class='footer-link'> Report Fraud  </span> <br /> <br />
-                <span class='footer-link'> Contact Us </span> <br /> <br /  >
-                <span class='footer-link'> Developers </span>
+                <b class='footer-sectionHeader'> For Enquiries </b> <br/> <br /> <br />
+                <div class='footer-link text-danger'> Manager </div>
+                <div class='footer-link'> Shop 1, Vasant Vihar, Near <br />Sethi Market, Balliwala, Dehradun </div>
             </div>
-            <div class='col-4'> 
-                <b class='footer-sectionHeader'> Social Links </b> <br/> <br /> <br />
-                <span class='footer-link'> Twitter </span> <br /> <br />
-                <span class='footer-link'> Instagram  </span> <br /> <br />
-                <span class='footer-link'> LinkedIn </span> <br /> <br /  >
-                <span class='footer-link'> Email </span>
+            <div class='col-3'> 
+                <b class='footer-sectionHeader'> Opening Hours : Monday - Sunday  </b> <br/> <br /> <br />
+                <div class='footer-link text-danger'> Timings  </div>
+                <div class='footer-link'> 11: 00 AM - 10: 00 PM </div>
             </div>
+        </div> <br />
+        <hr />
+        <div id='footer-credits'>
+            © 2023 Vivek's Restaurant &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ALL RIGHTS RESERVED 
         </div>
     </div>`;
 }

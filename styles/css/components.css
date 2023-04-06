@@ -1,11 +1,11 @@
-.outlined-red-btn {
+.outlined-red-btn, .outlined-red-btn-inverted {
   background-color: white;
   color: #a52f26;
   border-radius: 2px;
   border: 1px solid #a52f26;
 }
 
-.outlined-red-btn:hover {
+.outlined-red-btn:hover, .outlined-red-btn-inverted:hover {
   background-color: #a52f26;
   color: white;
 }
@@ -90,6 +90,15 @@ header .navigation-link #cart-items-count-indicator {
   border-radius: 10px;
 }
 
+.outlined-red-btn-inverted {
+  background-color: #a52f26;
+  color: white;
+}
+
+.outlined-red-btn-inverted:hover {
+  background-color: black;
+}
+
 footer {
   background-color: black;
   color: white;
@@ -106,15 +115,14 @@ footer #footerBox #footer-headText {
 
 footer #footerBox .footer-sectionHeader {
   letter-spacing: 1.5px;
-  font-size: 120%;
+  font-size: 110%;
 }
 
 footer #footerBox .footer-link {
   margin-top: 5%;
 }
 
-footer #footerBox .footer-link:hover {
-  font-size: 105%;
-  cursor: pointer;
+footer #footerBox #footer-credits {
+  color: rgba(106, 104, 104, 0.6);
 }
 /*# sourceMappingURL=components.css.map */

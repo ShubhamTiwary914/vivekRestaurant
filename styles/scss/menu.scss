@@ -16,7 +16,6 @@
     position: fixed;
     margin: 5% 0px 0px 40%;
     z-index: 2;
-
 }
 
 
@@ -129,11 +128,25 @@ body{
     }
 
 
+    .outlined-red-btn-inverted{
+        @extend .outlined-red-btn;
+        background-color: $logoBackground;
+        color: white;
+        &:hover{
+            background-color: white;
+            color: $logoBackground;
+        }
+    }
+
+    
+
     #goto-cart-btn{
         position: fixed;
         z-index: 1;
         height: 10%;
         margin: 10% 0% 0% 90%;
+        border-radius:  10px;
+        @extend .outlined-red-btn-inverted;
     }
 
 }

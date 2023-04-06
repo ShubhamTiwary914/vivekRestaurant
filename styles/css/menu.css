@@ -1,11 +1,11 @@
-.outlined-red-btn {
+.outlined-red-btn, body .outlined-red-btn-inverted, body #goto-cart-btn {
   background-color: white;
   color: #a52f26;
   border-radius: 2px;
   border: 1px solid #a52f26;
 }
 
-.outlined-red-btn:hover {
+.outlined-red-btn:hover, body .outlined-red-btn-inverted:hover, body #goto-cart-btn:hover {
   background-color: #a52f26;
   color: white;
 }
@@ -151,10 +151,21 @@ body #menu-itemsList .item-price {
   font-size: 120%;
 }
 
+body .outlined-red-btn-inverted, body #goto-cart-btn {
+  background-color: #a52f26;
+  color: white;
+}
+
+body .outlined-red-btn-inverted:hover, body #goto-cart-btn:hover {
+  background-color: white;
+  color: #a52f26;
+}
+
 body #goto-cart-btn {
   position: fixed;
   z-index: 1;
   height: 10%;
   margin: 10% 0% 0% 90%;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=menu.css.map */

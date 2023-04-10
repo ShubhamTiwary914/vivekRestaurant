@@ -108,27 +108,27 @@ const menuList = {
                 { "name": "Paneer Makhane" , "amount": 1, price: "220", "ext": "jpg", },
             ],
             "nonVeg": [
-                { "name": "Butter Chicken" , "amount": 1, price: "170/270/490", "ext": "jpg", },
+                { "name": "Butter Chicken" , "amount": 1, price: "170/270/490", "ext": "webp", },
                 { "name": "Chicken Curry" , "amount": 1, price: "170/270/490" , "ext": "jpg", },
                 { "name": "Chicken Saag" , "amount": 1, price: "170/280/490", "ext": "jpg", },
                 { "name": "Chicken Masala" , "amount": 1, price: "170/280/490", "ext": "jpg", },
                 { "name": "Chicken Bharta" , "amount": 1, price: "280/490", "ext": "jpg", },
                 { "name": "Butter Chicken Bone Less" , "amount": 1, price: "290/500", "ext": "jpg", },
                 { "name": "Karahi Chicken" , "amount": 1, price: "280/490" , "ext": "jpg", },
-                { "name": "Handi Chicken" , "amount": 1, price: "280/490", "ext": "jpg", },
-                { "name": "Chicken Tikka Masala" , "amount": 4, price: "270/480", "ext": "jpg", },
+                { "name": "Handi Chicken" , "amount": 1, price: "280/490", "ext": "webp", },
+                { "name": "Chicken Tikka Masala" , "amount": 4, price: "270/480", "ext": "webp", },
                 { "name": "Chicken Mughlai" , "amount": 1, price: "280/490", "ext": "jpg", },
                 { "name": "Chicken Kali Mirch" , "amount": 1, price: "280/490", "ext": "jpg", },
-                { "name": "Chicken Do Piaza" , "amount": 1, price: "280/490" , "ext": "jpg", },
+                { "name": "Chicken Do Pyaza" , "amount": 1, price: "280/490" , "ext": "jpg", },
                 { "name": "Chicken Kolapuri" , "amount": 1, price: "280/490", "ext": "jpg", },
 
                 { "name": "Mutton Rogan Josh" , "amount": 1, price: "240/450/820", "ext": "jpg", },
                 { "name": "Dahi Meat" , "amount": 1, price: "240/450/820" , "ext": "jpg", },
                 { "name": "Saag Meat" , "amount": 1, price: "240/450/820", "ext": "jpg", },
-                { "name": "Shahi Mutton Korma(Boneless)" , "amount": 1, price: "450/830", "ext": "jpg", },
+                { "name": "Shahi Mutton Korma" , "amount": 1, price: "450/830", "ext": "webp", },
                 { "name": "Mutton Mughlai" , "amount": 1, price: "450/830", "ext": "jpg", },
-                { "name": "Mushroom Masala" , "amount": 1, price: "450/830", "ext": "jpg", },
-                { "name": "Mushroom Do Piaza" , "amount": 1, price: "450/830" , "ext": "jpg", },
+                { "name": "Mutton Masala" , "amount": 1, price: "450/830", "ext": "webp", },
+                { "name": "Mutton Do Pyaza" , "amount": 1, price: "450/830" , "ext": "webp", },
                 { "name": "Handi Meat" , "amount": 1, price: "450/830", "ext": "jpg", },
                 { "name": "Karahi Mutton" , "amount": 1, price: "450/830", "ext": "jpg", }
             ]
@@ -143,17 +143,17 @@ const menuList = {
             "veg": [
                 { "name": "Plain Rice" , "amount": 1, price: "70/120", "ext": "jpg", },
                 { "name": "Jeera Rice" , "amount": 1, price: "80/130", "ext": "jpg", },
-                { "name": "Veg. Pulao" , "amount": 1, price: "120/180", "ext": "jpg", },
-                { "name": "Mattar Pulao" , "amount": 1, price: "110/170", "ext": "jpg", },
-                { "name": "Cheese Pulao" , "amount": 1, price: "130/200", "ext": "jpg", },
-                { "name": "Veg. Biryani with Raita" , "amount": 1, price: "120/180", "ext": "jpg", }
+                { "name": "Veg Pulao" , "amount": 1, price: "120/180", "ext": "jpg", },
+                { "name": "Mattar Pulao" , "amount": 1, price: "110/170", "ext": "webp", },
+                { "name": "Cheese Pulao" , "amount": 1, price: "130/200", "ext": "webp", },
+                { "name": "Veg Biryani with Raita" , "amount": 1, price: "120/180", "ext": "jpg", }
             ],
             "nonVeg": [
                 { "name": "Mutton Biryani" , "amount": 1, price: "180/280", "ext": "jpg", },
-                { "name": "Egg. Pulao" , "amount": 1, price: "130", "ext": "jpg", },
+                { "name": "Egg Pulao" , "amount": 1, price: "130", "ext": "jpg", },
                 { "name": "Chicken Pulao" , "amount": 1, price: "180", "ext": "jpg", },
-                { "name": "Mutton Pulao" , "amount": 1, price: "180", "ext": "jpg", },
-                { "name": "Egg. Biryani with Raita" , "amount": 1, price: "130", "ext": "jpg", },
+                { "name": "Mutton Pulao" , "amount": 1, price: "180", "ext": "webp", },
+                { "name": "Egg Biryani with Raita" , "amount": 1, price: "130", "ext": "jpg", },
                 { "name": "Chicken Biryani with Raita" , "amount": 1, price: "170", "ext": "jpg", }
             ]
         }
@@ -167,17 +167,17 @@ const menuList = {
             "itemList": [
                 { "name": "Mix Raita" , "amount": 1, price: "90", "ext": "jpg", },
                 { "name": "Bundi Raita" , "amount": 1, price: "90" , "ext": "jpg", },
-                { "name": "Onion Raita" , "amount": 1, price: "90", "ext": "jpg", },
+                { "name": "Onion Raita" , "amount": 1, price: "90", "ext": "webp", },
                 { "name": "Aloo Raita" , "amount": 1, price: "90", "ext": "jpg", },
-                { "name": "Plain Raita" , "amount": 1, price: "80", "ext": "jpg", },
+                { "name": "Plain Raita" , "amount": 1, price: "80", "ext": "jpeg", },
                 { "name": "Curd" , "amount": 1, price: "60", "ext": "jpg", },
-                { "name": "Pineapple Raita" , "amount": 1, price: "120" , "ext": "jpg", },
+                { "name": "Pineapple Curd" , "amount": 1, price: "120" , "ext": "jpg", },
                 { "name": "Green Salad" , "amount": 1, price: "80", "ext": "jpg", },
                 { "name": "Tomato Salad" , "amount": 1, price: "50", "ext": "jpg", },
                 { "name": "Onion Salad" , "amount": 1, price: "50", "ext": "jpg", },
                 { "name": "Chicken Salad" , "amount": 1, price: "50", "ext": "jpg", },
-                { "name": "Kachumber Salad (Plain)" , "amount": 1, price: "60" , "ext": "jpg", },
-                { "name": "Kachumber Salad (Cream)" , "amount": 1, price: "70", "ext": "jpg", }
+                { "name": "Kachumber Salad Plain" , "amount": 1, price: "60" , "ext": "jpg", },
+                { "name": "Kachumber Salad Cream" , "amount": 1, price: "70", "ext": "jpg", }
             ]
         }
     },
@@ -193,22 +193,71 @@ const menuList = {
     "egg": {
         "hasCategory": false,
         "items": {
-            "itemList": []
+            "itemList": [
+                { "name": "Omelette" , "amount": 1, price: "100", "ext": "jpg", },
+                { "name": "Boiled Egg" , "amount": 1, price: "50" , "ext": "jpg", },
+                { "name": "Egg Bhujiya" , "amount": 1, price: "100", "ext": "jpg", },
+                { "name": "Egg Curry" , "amount": 1, price: "90/140", "ext": "jpg", },
+                { "name": "Egg Masala" , "amount": 1, price: "160", "ext": "jpg", }
+            ]
         }
     },
 
     "bread": {
         "hasCategory": false,
         "items": {
-            "itemList": []
+            "itemList": [
+                { "name": "Tandoori Roti" , "amount": 1, price: "50" , "ext": "jpg", },
+                { "name": "Tandoori Butter Roti" , "amount": 1, price: "100", "ext": "jpg", },
+                { "name": "Tawa Roti" , "amount": 1, price: "90/140", "ext": "jpg", },
+                { "name": "Naan" , "amount": 1, price: "160", "ext": "jpg", },
+
+                { "name": "Butter Naan" , "amount": 1, price: "100", "ext": "jpg", },
+                { "name": "Garlic Naan" , "amount": 1, price: "50" , "ext": "jpg", },
+                { "name": "Stuff Naan" , "amount": 1, price: "100", "ext": "webp", },
+                { "name": "Paneer Naan" , "amount": 1, price: "90/140", "ext": "jpg", },
+                { "name": "Misi Roti" , "amount": 1, price: "160", "ext": "jpg", },
+
+                { "name": "Lachha Parantha" , "amount": 1, price: "100", "ext": "jpg", },
+                { "name": "Aloo Naan" , "amount": 1, price: "50" , "ext": "jpg", },
+                { "name": "Mix Stuff Kulcha" , "amount": 1, price: "100", "ext": "jpg", },
+                { "name": "Onion Kulcha" , "amount": 1, price: "90/140", "ext": "jpg", }
+            ]
         }
     },
 
     "chinese": {
         "hasCategory": true,
         "items": {
-            "veg": [],
-            "nonVeg": []
+            "veg": [
+                { "name": "Veg Chowmein" , "amount": 1, price: "100/150", "ext": "jpg", },
+                { "name": "Veg Manchurian" , "amount": 1, price: "140/220" , "ext": "jpg", },
+                { "name": "Chilly Paneer" , "amount": 1, price: "140/240", "ext": "jpg", },
+                { "name": "Cheese Manchurian" , "amount": 1, price: "140/220", "ext": "jpg", },
+
+                { "name": "Veg Fried Rice" , "amount": 1, price: "120/180", "ext": "jpg", },
+                { "name": "Paneer Chowmein" , "amount": 1, price: "180" , "ext": "jpeg", },
+                { "name": "Egg Chowmein" , "amount": 1, price: "170", "ext": "webp", },
+                { "name": "Mushroom Chowmein" , "amount": 1, price: "180", "ext": "jpg", },
+
+                { "name": "Veg Garlic Chowmein" , "amount": 1, price: "1060", "ext": "webp", },
+                { "name": "Mushroom Fried Rice" , "amount": 1, price: "200" , "ext": "jpg", },
+                { "name": "Veg Rice and Noodles" , "amount": 1, price: "180", "ext": "webp", },
+                { "name": "Veg Choupsey" , "amount": 1, price: "200", "ext": "jpg", }
+            ],
+            "nonVeg": [
+                { "name": "Chicken Manchurian" , "amount": 1, price: "100/150", "ext": "jpg", },
+                { "name": "Chilly Chicken With Bone" , "amount": 1, price: "140/240", "ext": "jpg", },
+                { "name": "Chilly Chicken Boneless" , "amount": 1, price: "140/220", "ext": "jpg", },
+
+                { "name": "Ginger Garlic Chicken" , "amount": 1, price: "120/180", "ext": "jpg", },
+                { "name": "Chicken Chowmein" , "amount": 1, price: "180" , "ext": "jpg", },
+                { "name": "Chicken Garlic Chowmein" , "amount": 1, price: "170", "ext": "webp", },
+                { "name": "Egg Fried Rice" , "amount": 1, price: "180", "ext": "jpg", },
+
+                { "name": "Chicken Fried Rice" , "amount": 1, price: "1060", "ext": "png", },
+                { "name": "Chicken Rice and Noodles" , "amount": 1, price: "200" , "ext": "jpg", },
+            ]
         }
     }
 }

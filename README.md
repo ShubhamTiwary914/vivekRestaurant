@@ -1,7 +1,6 @@
-# Vivek Restaurant Website
+# Vivek Restaurant Website 
 
-- A dine and dash Web Application for a local Restaurant in Dehradun, Uttarakhand.
-
+- A delivery ordering service or Dine and Dash Booking Web Application for a local Restaurant in Dehradun, Uttarakhand.
 
 
 
